@@ -1,0 +1,28 @@
+{% extends 'clients/base.html' %}
+
+{% block content %}
+<div class="row">
+
+    {% for object in object_list %}
+
+
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+
+            <div class="card-body">
+                <p class="card-text">Название: {{ object.name }}</p>
+                <p class="card-text">Почта: {{ object.email }}</p>
+                <p class="card-text">К кому относится: {{ object.owner }}</p>
+                <p class="card-text">Описание: {{ object.comment | truncatechars:30 }}</p>
+
+                <a href="{% url 'clients:client' object.pk %}" class="btn btn-secondary my-2">Клиент</a>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'clients/base.html' %}
+
+{% block content %}
+<div class="col-md-6">
+    <div class="card mb-4 box-shadow">
+
+        <div class="card-body">
+            <p class="card-text">Тема: {{ object.subject }}</p>
+            <p class="card-text">Тело: {{ object.body }}</p>
+            <p class="card-text">К кому относится: {{ object.owner  }}</p>
+
+            <a href="{% url 'clients:mail_list' %}" class="btn btn-secondary my-2">Все сообщения</a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

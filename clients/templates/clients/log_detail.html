@@ -1,0 +1,19 @@
+{% extends 'clients/base.html' %}
+
+{% block content %}
+<div class="col-md-6">
+    <div class="card mb-4 box-shadow">
+
+        <div class="card-body">
+            <p class="card-text">PK: {{ object.pk }}</p>
+            <p class="card-text">Время последней попытки: {{ object.last_q }}</p>
+            <p class="card-text">Статус: {{ object.status  }}</p>
+            <p class="card-text">Ответ сервера: {{ object.answer_server }}</p>
+            <p class="card-text">Рассылка: {{ object.mailing  }}</p>
+
+            <a href="{% url 'clients:logs_list' %}" class="btn btn-secondary my-2">All logs</a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

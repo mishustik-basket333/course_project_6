@@ -1,0 +1,22 @@
+{% extends 'clients/base.html' %}
+
+{% block content %}
+
+
+
+    <div class="col-md-6">
+        <div class="card mb-4 box-shadow">
+
+            <div class="card-body">
+                <p class="card-text">Заголовок: {{ object.heading }}</p>
+                <p class="card-text">Описание: {{ object.description }}</p>
+                <p class="card-text">Создано: {{ object.created_at  }}</p>
+                <p class="card-text">Просмотры: {{ object.count_views }}</p>
+
+                <a href="{% url 'blog:blogs_list' %}" class="btn btn-secondary my-2">Все блоги</a>
+
+            </div>
+        </div>
+    </div>
+    {{ object.counter }}
+{% endblock %}

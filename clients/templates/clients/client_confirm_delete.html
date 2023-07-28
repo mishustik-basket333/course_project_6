@@ -1,0 +1,12 @@
+{% extends 'clients/base.html' %}
+
+{% block content %}
+<h4>Уверены, что хотите удалить клиента: {{ object }} ?</h4>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input href="{% url 'users:login' %}" type="submit" cls="btn btn-success"
+           value="Точно удалить ?">
+        <a href="{% url 'users:login' %}" class="btn btn-secondary my-2">Опана</a>
+</form>
+{% endblock content %}
