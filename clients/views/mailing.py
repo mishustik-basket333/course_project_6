@@ -9,7 +9,7 @@ from clients.models import Mailings
 
 # Сообщения
 #
-class MailingsUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class MailingsUpdateView(LoginRequiredMixin, UpdateView):
     model = Mailings
     form_class = MailingsForm
     success_url = reverse_lazy("users:login")
