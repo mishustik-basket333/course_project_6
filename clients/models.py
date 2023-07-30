@@ -35,7 +35,7 @@ class Mailings(models.Model):
     time = models.TimeField(**NULLABLE, verbose_name='время', default=datetime.now().time())
     date = models.DateField(verbose_name='дата', auto_now=True)
     period = models.CharField(max_length=20, choices=PERIOD_CHOICES, verbose_name='Период отправки')
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='завершено',
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='создано',
                               verbose_name='Статус рассылки')
     clients = models.ManyToManyField(Client, verbose_name='Принадлежит к клиенту:')
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, **NULLABLE)
